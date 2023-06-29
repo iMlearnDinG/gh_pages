@@ -4,6 +4,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import '../App.css'; // Import the App CSS file
 import loginImage from '../images/login-image.png'; // Update the file path and name
 import loginImage1 from '../images/login-image1.png';
+import backgroundVideo from '../images/video.mp4';
 
 const Login = () => {
   const navigate = useNavigate();
@@ -106,9 +107,21 @@ const Login = () => {
   }
 }, [fadeOut]);
 
+  useEffect(() => {
+    const videoElement = document.querySelector('.background-video');
+    if (videoElement) {
+      videoElement.playbackRate = 0.45; // Set the playback rate to 0.5 for slower speed
+    }
+  }, []);
+
 
   return (
   <div className="App-header">
+    <video className="background-video" autoPlay loop muted>
+      <source src={backgroundVideo} type="video/mp4" />
+      Your browser does not support the video tag.
+    </video>
+
     <img
       id="login-image"
       src={loginImage}
@@ -141,10 +154,10 @@ const Login = () => {
       Login
     </button>
     {error && (
-  <p className={`error-message ${fadeOut ? 'fade-out' : ''}`} >
-    {error}
-  </p>
-)}
+      <p className={`error-message ${fadeOut ? 'fade-out' : ''}`} >
+        {error}
+      </p>
+    )}
     <img
       id="login-image1"
       src={loginImage1}
@@ -161,7 +174,8 @@ const Login = () => {
       </div>
     </div>
   </div>
-  );
+);
+
 };
 
 export default Login;

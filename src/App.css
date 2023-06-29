@@ -14,7 +14,7 @@
 }
 
 .App-header {
-  background-color: #282c34;
+  background-color: rgba(0, 0, 0, 0.6); /* Adjust the opacity value (0.8) as desired */
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -24,8 +24,9 @@
   color: white;
 }
 
+
 .App-header h2 {
-  font-family: "Times New Roman";
+  font-family: "High Tower Text";
   font-size: 64px;
   font-weight: bold;
   text-transform: uppercase;
@@ -111,6 +112,8 @@
   border: 2px ridge goldenrod;
   border-radius: 5px;
   background-color: #33373a;  /* Add this property */
+  margin-bottom: 15px;
+  text-align: center;
 }
 
 .App-input::placeholder {
@@ -186,8 +189,8 @@
   color: #33;
   font-family: "High Tower Text";
   font-weight: normal;
-  margin-bottom: 35px;
-  margin-top: -30px;
+  margin-bottom: 40px;
+  margin-top: -40px;
 }
 
 .signup-section .centered {
@@ -345,7 +348,7 @@
   align-items: center;
   justify-content: center;
   height: 100vh;
-  background-color: #282c34;
+  background-color: rgba(0, 0, 0, 0.6); /* Adjust the opacity value (0.8) as desired */
   color: white;
 }
 
@@ -410,6 +413,7 @@
   border: 3px solid #ccc;
   border-radius: 5px;
   margin-top: 0x;
+  text-align: center;
 }
 .register-input:not(:last-child) {
   margin-bottom: 10px;
@@ -581,6 +585,19 @@
 @keyframes fadeIn {
   0% { opacity: 0; }
   100% { opacity: 1; }
+}
+
+
+.background-video {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  opacity: 100%;
+  object-fit: cover;
+  animation: revert;
 }
 
 
