@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import axios from 'axios';
-import '../App.css';
+import '../css/App.css';
 import { useNavigate } from "react-router-dom";
 import registerImage from '../images/register-image.png';
 import registerImage1 from '../images/register-image1.png';

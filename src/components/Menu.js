@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
-import '../App.css'; // Import your CSS file
+import '../css/App.css'; // Import your CSS file
 
 const Menu = () => {
   const navigate = useNavigate();

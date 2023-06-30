@@ -2,7 +2,7 @@ import React, { useEffect, useState, useRef } from 'react';
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
 import io from 'socket.io-client';
-import '../App.css'; // Import your CSS file
+import '../css/App.css'; // Import your CSS file
 
 const SpecificLobby = () => {
     const { lobbyID } = useParams();

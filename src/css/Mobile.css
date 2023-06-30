@@ -1,0 +1,170 @@
+
+@media (max-width: 550px) {
+  .login-image {
+    width: 85%; /* Full width on smaller screens */
+    margin-bottom: 30px; /* Adjust margins as needed */
+    animation: rotateBack 13s; /* Adjust animation duration as needed */
+    transform: rotateX(180deg) rotateY(180deg) rotateZ(180deg); /* Adjust rotations as needed */
+    transition-duration: 2s; /* Adjust transition duration as needed */
+  }
+
+  .login-image::before {
+    transition-duration: 3s; /* Adjust transition duration as needed */
+  }
+}
+
+
+@media (max-width: 550px) {
+  .login-image1 {
+    width: 100%;
+    height: auto;
+    max-width: 350px;
+    max-height: 200px;
+    object-fit: cover;
+    margin-top: 25px;
+    margin-bottom: 10px;
+    margin-right: 5px;
+    transform: scaleY(-1);
+  }
+}
+
+@media (max-width: 550px) {
+  .register-image {
+    max-width: 300px;
+    max-height: 400px;
+  }
+}
+
+@media (max-width: 550px){
+  .login-button {
+    padding: 0.5vw;
+    border: 2px;
+    border-radius: 8px;
+    color: goldenrod;
+    background-color: #282c34;
+    cursor: pointer;
+    font-size: 1.5rem;
+    font-family: "Script MT Bold";
+    margin-left: 0px;
+    margin-top: 4vw;
+    margin-bottom: -2vw;
+    transition-duration: 0.85s;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
+    width: 40%;
+  }
+}
+
+@media (max-width: 550px) {
+  .login-input-group {
+    display: flex;
+    flex-direction: row;
+    margin-left: -4px;
+  }
+}
+
+@media (max-width: 550px) {
+  .App-input {
+    color: navajowhite;
+    padding: 7px;
+    border: 2px ridge goldenrod;
+    border-radius: 5px;
+    background-color: #33373a;
+    margin-bottom: 5%; /* Adjusted to viewport width */
+    margin-left: 5px;
+    text-align: center;
+    width: 35vw;
+  }
+}
+
+/* The media query for screens smaller than 600px */
+@media (max-width: 550px) {
+  .register-image1, .register-image2 {
+    max-width: 85vw;
+    max-height: auto;
+  }
+
+  .register-input-container {
+    margin-bottom: 15px;
+  }
+
+  .register-input {
+    padding: 5px;
+    border-width: 2px;
+    font-size: 16px;
+  }
+
+  .register-input::placeholder {
+    font-size: 15px;
+  }
+
+  .register-button,
+  .exit-button {
+    padding: 7px 15px;
+    font-size: 1rem;
+    margin-top: 40px;
+    margin-bottom: 0;
+    margin-right: 0;
+  }
+
+  .error-message-reg {
+    font-size: 11px;
+    margin-top: -50px;
+  }
+
+  .register-heading {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+  }
+
+  .specific-lobby-header {
+    font-size: 1.5rem;
+  }
+
+  .specific-lobby-users p {
+    font-size: 1rem;
+  }
+
+  .login-image1 {
+    max-width: 85vw;
+    max-height: auto;
+  }
+
+  .glow-text {
+    font-size: 3rem;
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+@media (min-width: 550px) {
+  .App-header h2 {
+    font-size: 4rem;  /* Fixed font size for larger screens */
+  }
+  .login-input-group {
+    flex-direction: row;
+    margin-right: 20px;
+    margin-bottom: -70px;
+  }
+}
+
+@media (max-width: 550px) {
+  .lobby h2 {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 550px) {
+  .App-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 90%; /* Adjust as necessary */
+    max-width: 1200px; /* Adjust as necessary */
+    margin: auto /* Centers the container horizontally */
+  }
+}
