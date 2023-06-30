@@ -1,15 +1,55 @@
 
 @media (max-width: 550px) {
   .login-image {
-    width: 85%; /* Full width on smaller screens */
-    margin-bottom: 30px; /* Adjust margins as needed */
-    animation: rotateBack 13s; /* Adjust animation duration as needed */
-    transform: rotateX(180deg) rotateY(180deg) rotateZ(180deg); /* Adjust rotations as needed */
-    transition-duration: 2s; /* Adjust transition duration as needed */
+    width: 300px;
+    height: auto;
+    margin-bottom: 25px;
+    position: relative;
+    opacity: 0;
+    animation: rotateBack 13s;
+    perspective: 1500px;
+    transform-style: preserve-3d;
+    transform: rotateX(360deg) rotateY(360deg) rotateZ(360deg);
+    transition-duration: 3s;
+    filter: blur(0);
+  }
+
+  .login-image.fade-in {
+    opacity: 1;
+  }
+
+  .login-image:hover {
+    filter: blur(10px);
+  }
+
+  .login-image:hover::before {
+    opacity: 1;
   }
 
   .login-image::before {
-    transition-duration: 3s; /* Adjust transition duration as needed */
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.2);
+    pointer-events: none;
+    transition-duration: 5s;
+    opacity: 0;
+  }
+
+  @keyframes rotateBack {
+    0% {
+      opacity: 0;
+      transform: rotateX(180deg) rotateY(0deg) rotateZ(360deg) scale(0.2);
+      perspective: 500px;
+    }
+    100% {
+      opacity: 1;
+      transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg) scale(1);
+      perspective: 0px;
+    }
   }
 }
 
@@ -30,9 +70,28 @@
 
 @media (max-width: 550px) {
   .register-image {
-    max-width: 300px;
-    max-height: 400px;
-  }
+  width: 100%; /* Adjust the width as needed */
+  height: auto; /* Adjust the height as needed */
+  max-width: 100px; /* Set a maximum width if desired */
+  max-height: 150px; /* Set a maximum height if desired */
+  object-fit: contain; /* Adjust the object-fit property as needed */
+  margin-bottom: -10px; /* Adjust the margin as needed */
+  transition: transform 3s ease, opacity 0s ease; /* Combine the transitions */
+
+  /* Tilt animation styles */
+  perspective: 1000px;
+  transform-style: preserve-3d;
+  transform: rotateX(180deg) rotateY(0deg) rotateZ(0deg);
+}
+
+.register-image:hover {
+  transform: rotateX(-10deg) rotateY(10deg);
+}
+
+.register-image.animate {
+  transform: rotateX(-10deg) rotateY(10deg);
+  transition: transform 0.5s ease;
+}
 }
 
 @media (max-width: 550px){
@@ -99,17 +158,36 @@
   }
 
   .register-button {
-    display: inline-block;
-    padding: 7px 15px;
-    font-size: 1rem;
-    margin-right: 0;
-  }
+  /* Updated styles for the Submit button */
+  display: inline-block;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  color: goldenrod;
+  background-color: #282c34;
+  cursor: pointer;
+  font-size: 1rem;
+  font-family: "Book Antiqua";
+  margin-top: 78px;
+  margin-bottom: -60px;
+  transition-duration: 0.85s;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
+  margin-left: 0px; /* Add margin to create space between buttons */
+}
 
-  .exit-button {
-    display: inline-block;
-    padding: 7px 15px;
-    font-size: 1rem;
-    margin-right: 0;
+  .exit-button {display: inline-block;
+  padding: 10.5px 20px;
+  border: none;
+  border-radius: 5px;
+  color: goldenrod;
+  background-color: #282c34;
+  cursor: pointer;
+  font-size: 1rem;
+  font-family: "Book Antiqua";
+  margin-top: 19.5px;
+  margin-left: 90px;
+  transition-duration: 0.85s;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
   }
 
   .error-message-reg {
@@ -131,7 +209,7 @@
   }
 
   .login-image1 {
-    max-width: 85vw;
+    max-width: 60vw;
     max-height: auto;
   }
 
@@ -148,9 +226,6 @@
 }
 
 @media (min-width: 550px) {
-  .App-header h2 {
-    font-size: 4rem;  /* Fixed font size for larger screens */
-  }
   .login-input-group {
     flex-direction: row;
     margin-right: 20px;
@@ -159,8 +234,8 @@
 }
 
 @media (max-width: 550px) {
-  .lobby h2 {
-    font-size: 1.5rem;
+  .App-header .glow-text {
+    font-size: 2.7rem;
   }
 }
 
@@ -170,7 +245,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    width: 90%; /* Adjust as necessary */
+    width: 100%; /* Adjust as necessary */
     max-width: 1200px; /* Adjust as necessary */
     margin: auto /* Centers the container horizontally */
   }
