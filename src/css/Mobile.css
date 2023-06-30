@@ -78,7 +78,8 @@
 
 /* The media query for screens smaller than 600px */
 @media (max-width: 550px) {
-  .register-image1, .register-image2 {
+  .register-image1,
+  .register-image2 {
     max-width: 85vw;
     max-height: auto;
   }
@@ -97,12 +98,17 @@
     font-size: 15px;
   }
 
-  .register-button,
-  .exit-button {
+  .register-button {
+    display: inline-block;
     padding: 7px 15px;
     font-size: 1rem;
-    margin-top: 40px;
-    margin-bottom: 0;
+    margin-right: 0;
+  }
+
+  .exit-button {
+    display: inline-block;
+    padding: 7px 15px;
+    font-size: 1rem;
     margin-right: 0;
   }
 
@@ -133,6 +139,7 @@
     font-size: 3rem;
   }
 }
+
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
