@@ -108,39 +108,17 @@ const Login = () => {
   }, [error]);
 
   useEffect(() => {
-    if (fadeOut) {
-      const timer = setTimeout(() => {
-        setError(null);
-      }, 3000);
-
-      return () => clearTimeout(timer);
-    }
-  }, [fadeOut]);
-
-  useEffect(() => {
     const videoElement = $('.background-video')[0];
     if (videoElement) {
-      videoElement.playbackRate = 0.45;
+      videoElement.playbackRate = 0.42;
     }
   }, []);
 
-  useEffect(() => {
-    const videoElement = $('.background-video')[0];
-    if (videoElement) {
-      videoElement.addEventListener('ended', function () {
-        $('.background-video-overlay').fadeIn(1000, function () {
-          videoElement.currentTime = 0;
-          videoElement.play();
-          $('.background-video-overlay').fadeOut(1000);
-        });
-      });
-    }
-  }, []);
 
   return (
     <div className="App-header">
       <div className="background-video-container">
-        <video className="background-video" autoPlay loop muted>
+        <video id="background-video" className="background-video" autoPlay loop muted>
           <source src={backgroundVideo} type="video/mp4" />
           Your browser does not support the video tag.
         </video>

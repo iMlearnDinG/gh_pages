@@ -21,7 +21,7 @@
 
 .App-header .glow-text {
   font-family: "High Tower Text";
-  font-size: 4rem; /* Fixed font size for larger screens */
+  font-size: 4rem;
   font-weight: bold;
   text-transform: uppercase;
   color: #23;
@@ -89,7 +89,9 @@
 .login-input-group {
   display: flex;
   flex-direction: row;
-  margin-left: 15px;
+  align-items: center;
+  justify-content: center;
+  margin-left: 13px;
 }
 
 .App-input {
@@ -98,11 +100,12 @@
   border: 2px ridge goldenrod;
   border-radius: 5px;
   background-color: #33373a;
-  margin-bottom: 85px;  /* Adjusted to viewport width */
+  margin-bottom: 85px;
   text-align: center;
-  width: 200px;  /* Fill the available width */
-  margin-left: 5px;
+  width: 200px;
+  margin-left: 10px;
 }
+
 
 .App-input::placeholder {
   color: navajowhite;
@@ -538,15 +541,13 @@
   100% { opacity: 1; }
 }
 
-.background-video {
+#background-video {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
   z-index: -1;
-  opacity: 100%;
   object-fit: cover;
-  animation: revert;
 }
 

@@ -1,7 +1,22 @@
+@media (max-height: 800px) {
+  .login-image {
+    width: 250px;
+    height: auto;
+    margin-bottom: 25px;
+    position: relative;
+    opacity: 0;
+    animation: rotateBack 13s;
+    perspective: 1500px;
+    transform-style: preserve-3d;
+    transform: rotateX(360deg) rotateY(360deg) rotateZ(360deg);
+    transition-duration: 3s;
+    filter: blur(0);
+  }
+}
 
 @media (max-width: 550px) {
   .login-image {
-    width: 300px;
+    width: 250px;
     height: auto;
     margin-bottom: 25px;
     position: relative;
@@ -50,6 +65,16 @@
       transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg) scale(1);
       perspective: 0px;
     }
+  }
+}
+
+@media (max-width: 550px) {
+  .login-container {
+    display: flex;
+    padding: 2vw;
+    flex-direction: column;
+    justify-content: center;
+    height: 100vh;
   }
 }
 
@@ -113,7 +138,7 @@
   }
 }
 
-@media (max-width: 550px) {
+@media (max-width: 720px) {
   .login-input-group {
     display: flex;
     flex-direction: row;
@@ -212,10 +237,6 @@
     max-width: 60vw;
     max-height: auto;
   }
-
-  .glow-text {
-    font-size: 3rem;
-  }
 }
 
 
@@ -239,14 +260,19 @@
   }
 }
 
+@media (max-height: 720px) {
+  .App-header .glow-text {
+    font-size: 2.1rem;
+  }
+}
+
 @media (max-width: 550px) {
   .App-header {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    width: 100%; /* Adjust as necessary */
     max-width: 1200px; /* Adjust as necessary */
-    margin: auto /* Centers the container horizontally */
+    margin-left: auto
   }
 }
