@@ -14,11 +14,10 @@
   }
 }
 
-
 @media (max-width: 650px) {
   .login-image {
     width: 65vw;
-    margin-bottom: 5vw;
+    margin-bottom: 4vw;
     position: relative;
     opacity: 0;
     animation: rotateBack 13s;
