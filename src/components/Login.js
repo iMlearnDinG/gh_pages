@@ -117,7 +117,7 @@ const Login = () => {
   return (
     <div className="App-header">
       <div className="background-video-container">
-        <video className="background-video" autoPlay loop muted>
+        <video className="background-video" autoPlay loop muted controls={"True"}>
           <source src={backgroundVideo} type="video/mp4" />
           Your browser does not support the video tag.
         </video>
