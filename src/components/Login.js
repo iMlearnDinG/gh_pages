@@ -50,7 +50,7 @@ const Login = () => {
   useEffect(() => {
     function handleResize() {
       if (window.innerWidth >= 768) {
-        require('../css/Desktop.css');
+        require('../css/App.css');
       } else {
         require('../css/Mobile.css');
       }
@@ -87,19 +87,12 @@ const Login = () => {
     handleCheckLoginStatus();
   }, [navigate]);
 
-  useEffect(() => {
-    const image = new Image();
-    image.src = loginImage;
-    $(image).on('load', function () {
-      $('#login-image').addClass('fade-in');
-    });
-  }, []);
 
   useEffect(() => {
     if (error) {
       const timer = setTimeout(() => {
         setFadeOut(true);
-      }, 3000);
+      }, 7000);
 
       return () => clearTimeout(timer);
     } else {
@@ -117,21 +110,13 @@ const Login = () => {
 
   return (
     <div className="App-header">
-      <div className="background-video-container" id="video-container">
-        <video id="background-video" className="background-video" autoPlay loop muted>
+      <img id="login-image" src={loginImage} alt="Login" className="login-image" />
+        <video id="background-video" className="background-video" autoPlay loop muted playsInline>
           <source src={backgroundVideo} type="video/mp4" />
           Your browser does not support the video tag.
         </video>
-        <div className="background-video-overlay"></div>
-      </div>
-
-      <img id="login-image" src={loginImage} alt="Login" className="login-image" />
-
       <h2 className="glow-text">B L I N D</h2>
       <h3 className="glow-text">E Y E</h3>
-
-
-
       <div className="login-input-group" style={{ marginTop: '35px' }}>
         <input
           type="text"

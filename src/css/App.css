@@ -7,7 +7,6 @@
   pointer-events: none;
 }
 
-
 .App-header {
   background-color: rgba(0, 0, 0, 0.6);
   min-height: 100vh;
@@ -17,7 +16,9 @@
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
+  overflow: hidden;
 }
+
 
 .App-link {
   color: #61dafb;
@@ -32,47 +33,9 @@
   }
 }
 
-.menu-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  background-color: #282c34;
-}
-
-.menu {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 2vw;
-  padding: 2vw;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  width: 60vw;  /* Adjusted to viewport width */
-  max-width: 400px;  /* Max width for larger screens */
-  background-color: #f2f2f2;
-  color: #333;
-}
-
-.menu button {
-  width: 100%;
-  padding: 10px;
-  border: none;
-  border-radius: 5px;
-  color: #fff;
-  background-color: #282c34;
-  cursor: pointer;
-  font-size: 1rem;
-}
-
-.menu button:hover {
-  background-color: #61dafb;
-}
-
 .login-container {
   display: flex;
-  padding: 2vw;
+  padding: 5vw;
   flex-direction: column;
   justify-content: center;
   height: 100vh;
@@ -94,7 +57,7 @@
   background-color: #33373a;
   margin-bottom: 85px;
   text-align: center;
-  width: 200px;
+  width: auto;
   margin-left: 10px;
 }
 
@@ -112,12 +75,11 @@
   background-color: #282c34;
   cursor: pointer;
   font-size: 1.5rem;
-  font-family: "Script MT Bold";
-  margin-top: 40px;
-  margin-bottom: 0px;
+  font-family: "Script MT Bold";;
   transition-duration: 0.85s;
   box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
-  width: 200px;
+  width: 14vw;
+  margin: 0.2vw;
 }
 
 .login-button:hover {
@@ -132,14 +94,15 @@
 }
 
 .App-button {
-  padding: 7px;
+  padding: 2px;
   border-radius: 5px;
   color: goldenrod;
   background-color: #282c34;
   cursor: pointer;
-  font-size: 1.25rem;
+  font-size: 1.15rem;
   font-family: "Script MT Bold";
-  margin-top: 0vw;
+  font-style: italic;
+  margin-top: -1vw;
   transition-duration: 0.85s;
   box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
   text-decoration: none;
@@ -173,91 +136,24 @@
   justify-content: center;
 }
 
-.lobby {
-  background-color: #282c34;
-  color: #fff;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: 20px;
-  min-height: 100vh;
-}
-
-.lobby h2 {
-  font-size: 2rem;
-  margin-bottom: 20px;
-}
-
-
-.lobby-table {
-  border-collapse: collapse;
-  width: 100%;
-  margin-bottom: 20px;
-}
-
-.lobby-table th, .lobby-table td {
-  border: 1px solid #ddd;
-  padding: 8px;
-}
-
-.lobby-table th {
-  padding-top: 12px;
-  padding-bottom: 12px;
-  text-align: left;
-  background-color: #282c34;
-  color: white;
-}
-
-.lobby-table td {
-  text-align: left;
-}
-
-.lobby-table tr:nth-child(even) {
-  background-color: #f2f2f2;
-}
-
-.lobby-table tr:hover {
-  background-color: #ddd;
-}
-
-.loader {
-  border: 16px solid #f3f3f3;
-  border-radius: 50%;
-  border-top: 16px solid #282c34;
-  width: 120px;
-  height: 120px;
-  animation: spin 2s linear infinite;
-}
-
 @keyframes spin {
   0% { transform: rotate(0deg); }
   100% { transform: rotate(360deg); }
 }
 
-.lobby-user {
-  display: flex;
-  justify-content: space-between;
-  padding: 10px;
-  border: 1px solid #fff;
-  margin-bottom: 10px;
-}
-
-.lobby-user span:first-child {
-  font-weight: bold;
-}
-
 .login-image {
-  width: 500px;
+  position: relative;
+  width: 25vw;
   height: auto;
   margin-bottom: 15px;
-  opacity: 0;
+  opacity: 1;
   animation: rotateBack 13s;
+  animation-fill-mode: forwards;
   perspective: 1500px;
   transform-style: preserve-3d;
   transform: rotateX(360deg) rotateY(360deg) rotateZ(360deg);
   transition-duration: 3s;
-  filter: blur(0);
+  filter: blur(0);;
 }
 
 .login-image.fade-in {
@@ -274,7 +170,7 @@
 
 .login-image::before {
   content: '';
-  position: absolute;
+  position: relative;
   top: 0;
   left: 0;
   width: 100%;
@@ -298,17 +194,30 @@
   }
 }
 
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
 .error-message {
   display: inline-flex;
   color: red;
   font-size: 13px;
   opacity: 0.99;
   margin-bottom: -30px;
-}
-
-.fade-out {
-  opacity: 0;
-  transition: opacity 3s ease-in-out
 }
 
 .register-container {
@@ -339,8 +248,6 @@
   transition: transform 0.5s ease;
 }
 
-
-/* Your original CSS */
 
 .register-image1, .register-image2 {
   width: 100%;
@@ -447,68 +354,14 @@
   color: white;
 }
 
-.specific-lobby-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  height: 100vh;
-  background-color: #282c34;
-  color: white;
-}
-
-.specific-lobby-header {
-  font-size: 2rem;
-  margin-bottom: 20px;
-}
-
-.specific-lobby-users {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-  margin-bottom: 20px;
-}
-
-.specific-lobby-users p {
-  font-size: 1.2rem;
-}
-
-.specific-lobby-console {
-  margin-top: 20px;
-}
-
-.specific-lobby-console ul {
-  list-style-type: none;
-  padding: 0;
-  margin: 0;
-}
-
-.specific-lobby-console li {
-  margin-bottom: 5px;
-}
-
-.specific-lobby-square {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  width: 50px;
-  height: 50px;
-  background-color: red;
-}
 
 .login-image1 {
   width: 100%;
   height: auto;
   max-width: 350px;
   max-height: 200px;
-  object-fit: cover;
-  margin-top: 25px;
-  margin-bottom: 10px;
-  margin-right: 5px;
   transform: scaleY(-1);
+  margin-top: -1vw;
 }
 
 h2.glow-text {
@@ -521,6 +374,7 @@ h2.glow-text {
   animation-iteration-count: infinite, 1;
   animation-fill-mode: none, forwards;
   opacity: 0;
+  font-size: 7vh;
 }
 
 @keyframes glow {
@@ -544,6 +398,7 @@ h3.glow-text {
   animation-iteration-count: infinite, 1;
   animation-fill-mode: none, forwards;
   opacity: 0;
+  font-size: 5vh;
 }
 
 @keyframes glow {
@@ -552,27 +407,14 @@ h3.glow-text {
   100% { text-shadow: 0 0 0px darkgoldenrod, 0 0 6px darkgoldenrod, 0 0 9px goldenrod, 0 0 12px navajowhite; }
 }
 
-@keyframes fadeIn {
-  0% { opacity: 0; }
-  100% { opacity: 1; }
-}
 
 #background-video {
   position: absolute;
   top: 0;
   left: 0;
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  height: 100%;
   z-index: -1;
   object-fit: cover;
-}
-
-#video-container {
-  height: 100%;
-  width: 100vw;
-  background-image: url("../images/video.mp4");
-  background-color: transparent;
-  position: absolute;
-  z-index: -1;
 }
 
