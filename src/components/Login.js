@@ -99,7 +99,7 @@ const Login = () => {
     if (error) {
       const timer = setTimeout(() => {
         setFadeOut(true);
-      }, 2200);
+      }, 3000);
 
       return () => clearTimeout(timer);
     } else {
@@ -127,8 +127,9 @@ const Login = () => {
 
       <img id="login-image" src={loginImage} alt="Login" className="login-image" />
 
-      <h2 className="glow-text" style={{ margin: 0 }}>B  l  i  n  d</h2>
-      <h2 className="glow-text" style={{ margin: 0, fontSize: '2.4rem' }}>e y e</h2>
+      <h2 className="glow-text">B L I N D</h2>
+      <h3 className="glow-text">E Y E</h3>
+
 
 
       <div className="login-input-group" style={{ marginTop: '35px' }}>

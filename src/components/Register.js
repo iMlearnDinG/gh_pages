@@ -1,11 +1,13 @@
 import React, {useEffect, useState} from 'react';
 import axios from 'axios';
 import '../css/App.css';
+import '../css/Mobile.css';
 import { useNavigate } from "react-router-dom";
 import registerImage from '../images/register-image.png';
 import registerImage1 from '../images/register-image1.png';
 import registerImage2 from '../images/register-image2.png';
 import backgroundVideo from '../images/video.mp4';
+import $ from "jquery";
 
 
 function Register() {
@@ -48,9 +50,9 @@ function Register() {
   };
 
   useEffect(() => {
-    const videoElement = document.querySelector('.background-video');
+    const videoElement = $('.background-video')[0];
     if (videoElement) {
-      videoElement.playbackRate = 0.37; // Set the playback rate to 0.5 for slower speed
+      videoElement.playbackRate = 0.42;
     }
   }, []);
 
@@ -60,10 +62,13 @@ function Register() {
 
   return (
   <div className="register-container">
-    <video className="background-video" autoPlay loop muted>
-      <source src={backgroundVideo} type="video/mp4" />
-      Your browser does not support the video tag.
-    </video>
+    <div className="background-video-container">
+        <video id="background-video" className="background-video" autoPlay loop muted>
+          <source src={backgroundVideo} type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+        <div className="background-video-overlay"></div>
+      </div>
     <img
       src={registerImage}
       alt="Register"
