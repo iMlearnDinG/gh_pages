@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { Link, useNavigate } from 'react-router-dom';
-import $ from 'jquery';
 import '../css/App.css';
 import '../css/Mobile.css';
 import '../css/Desktop.css';
@@ -13,6 +12,7 @@ const Login = () => {
   const navigate = useNavigate();
   const [user, setUser] = useState({ username: '', password: '' });
   const [error, setError] = useState(null);
+  const [fadeIn, setFadeIn] = useState(false);
   const [fadeOut, setFadeOut] = useState(false);
 
   const handleChange = (e) => {
@@ -90,9 +90,9 @@ const Login = () => {
   useEffect(() => {
     const image = new Image();
     image.src = loginImage;
-    $(image).on('load', function () {
-      $('#login-image').addClass('fade-in');
-    });
+    image.onload = function () {
+      setFadeIn(true);
+    };
   }, []);
 
   useEffect(() => {
@@ -108,29 +108,31 @@ const Login = () => {
   }, [error]);
 
   useEffect(() => {
-    const videoElement = $('.background-video')[0];
+    const videoElement = document.querySelector('.background-video');
     if (videoElement) {
       videoElement.playbackRate = 0.42;
     }
   }, []);
 
-
   return (
     <div className="App-header">
       <div className="background-video-container">
-        <video id="background-video" className="background-video" autoPlay loop muted>
+        <video className="background-video" autoPlay loop muted>
           <source src={backgroundVideo} type="video/mp4" />
           Your browser does not support the video tag.
         </video>
         <div className="background-video-overlay"></div>
       </div>
 
-      <img id="login-image" src={loginImage} alt="Login" className="login-image" />
+      <img
+        id="login-image"
+        src={loginImage}
+        alt="Login"
+        className={`login-image ${fadeIn ? 'fade-in' : ''}`}
+      />
 
       <h2 className="glow-text">B L I N D</h2>
       <h3 className="glow-text">E Y E</h3>
-
-
 
       <div className="login-input-group" style={{ marginTop: '35px' }}>
         <input
