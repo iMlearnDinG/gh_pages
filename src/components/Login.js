@@ -107,14 +107,27 @@ const Login = () => {
     }
   }, []);
 
+  const handleClick = () => {
+  // Remove focus from the button
+  document.activeElement.blur();
+
+  // Your button click logic here
+  loginUser();
+
+  // Add a time limit on the yellow effect
+  setTimeout(() => {
+    document.activeElement.blur();
+  }, 500); // Adjust the duration as needed (in milliseconds)
+};
+
 
   return (
     <div className="App-header">
       <img id="login-image" src={loginImage} alt="Login" className="login-image" />
-        <video id="background-video" className="background-video" autoPlay loop muted playsInline>
-          <source src={backgroundVideo} type="video/mp4" />
-          Your browser does not support the video tag.
-        </video>
+      <video id="background-video" className="background-video" autoPlay loop muted playsInline>
+        <source src={backgroundVideo} type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
       <h2 className="glow-text">B L I N D</h2>
       <h3 className="glow-text">E Y E</h3>
       <div className="login-input-group" style={{ marginTop: '35px' }}>
@@ -135,7 +148,7 @@ const Login = () => {
           className="App-input"
         />
       </div>
-      <button onClick={loginUser} className="login-button">
+      <button onClick={handleClick} className="login-button">
         Login
       </button>
       {error && (

@@ -43,12 +43,18 @@ const Menu = () => {
   return (
   <div className="menu-container">
     <div className="menu">
-      <button onClick={() => console.log('Single Player')}>Single Player</button>
-      <button onClick={() => navigate('/lobby')}>Multiplayer</button> {/* Redirect to Lobby */}
-      <button onClick={logout}>Logout</button>
+      <button onClick={() => console.log('Single Player')} className="menu-button">
+        Single Player
+      </button>
+      <button onClick={() => navigate('/lobby')} className="menu-button">
+        Multiplayer
+      </button>
+      <button onClick={logout} className="menu-button">
+        Logout
+      </button>
     </div>
   </div>
-  );
+);
 };
 
 export default Menu;

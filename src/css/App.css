@@ -8,7 +8,7 @@
 }
 
 .App-header {
-  background-color: rgba(0, 0, 0, 0.6);
+  background-color: rgba(0, 0, 0, 0.05);
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -46,40 +46,43 @@
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  margin-left: -5px;
 }
 
 .App-input {
   color: navajowhite;
-  padding: 10px;
+  padding: 1vh;
   border: 2px ridge goldenrod;
   border-radius: 5px;
   background-color: #33373a;
-  margin-bottom: 85px;
+  margin-bottom: 3vh;
   text-align: center;
-  width: auto;
-  margin-left: 10px;
+  width: 100%;
+  margin-left: 5px;
 }
 
 
 .App-input::placeholder {
   color: navajowhite;
   text-align: center;
+  opacity: 50%;
 }
 
 .login-button {
-  padding: 7px;
-  border: 2px;
-  border-radius: 8px;
+  display: inline-flex;
+  justify-content: center;
+  border-radius: 6px;
+  padding: 0.2vw;
+  border: none;
   color: goldenrod;
   background-color: #282c34;
   cursor: pointer;
-  font-size: 1.5rem;
-  font-family: "Script MT Bold";;
+  font-size: 75%;
+  font-family: "Script MT Bold";
+  margin-bottom: 1vh;
   transition-duration: 0.85s;
   box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
-  width: 14vw;
-  margin: 0.2vw;
+  width: 20vh;
+  max-width: 350px
 }
 
 .login-button:hover {
@@ -94,20 +97,25 @@
 }
 
 .App-button {
-  padding: 2px;
-  border-radius: 5px;
+  display: inline-flex;
+  justify-content: space-evenly;
+  text-align: center;
+  padding: 0.5vh;
+  border: 2px solid transparent;
+  border-image: linear-gradient(to right, transparent, goldenrod, transparent) 1 100%;
+  border-image-slice: 1;
+  font-style: italic;
+  border-radius: 4px;
   color: goldenrod;
   background-color: #282c34;
   cursor: pointer;
-  font-size: 1.15rem;
-  font-family: "Script MT Bold";
-  font-style: italic;
-  margin-top: -1vw;
+  font-size: 2vh;
+  font-family: "Book Antiqua";
   transition-duration: 0.85s;
   box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
   text-decoration: none;
-  width: 150px;
-  height: 25px;
+  margin-bottom: 2vh;
+  width: 15vh;
 }
 
 .App-button:hover {
@@ -123,12 +131,12 @@
 }
 
 .signup-section p {
-  font-size: 20px;
+  font-size: 75%;
   color: #33;
   font-family: "High Tower Text";
   font-weight: normal;
-  margin-bottom: 40px;
-  margin-top: -50px;
+  margin-bottom: 1vh;
+  margin-top: -2rem;
 }
 
 .signup-section .centered {
@@ -142,18 +150,17 @@
 }
 
 .login-image {
-  position: relative;
-  width: 25vw;
-  height: auto;
-  margin-bottom: 15px;
+  max-width: 25vw;
+  max-height: 35vh;
+  margin-bottom: 1vh;
   opacity: 1;
   animation: rotateBack 13s;
   animation-fill-mode: forwards;
-  perspective: 1500px;
   transform-style: preserve-3d;
   transform: rotateX(360deg) rotateY(360deg) rotateZ(360deg);
   transition-duration: 3s;
   filter: blur(0);;
+  margin-top: 2vh;
 }
 
 .login-image.fade-in {
@@ -213,12 +220,21 @@
 }
 
 .error-message {
-  display: inline-flex;
   color: red;
   font-size: 13px;
-  opacity: 0.99;
-  margin-bottom: -30px;
+  opacity: 1;
+  display: inline-flex;
+  animation: fadeout 8s;
+  position: absolute;
+  animation-fill-mode: forwards;  /* add this line */
 }
+
+@keyframes fadeout {
+  from {opacity: 1;}
+  to {opacity: 0;}
+}
+
+
 
 .register-container {
   display: flex;
@@ -230,9 +246,10 @@
 }
 
 .register-image {
-  width: 100px;
+  width: 13vh;
   object-fit: contain;
-  margin-bottom: -10px;
+  margin-bottom: 0vh;
+  margin-top: 3vh;
   transition: transform 3s ease, opacity 0s ease;
   perspective: 1000px;
   transform-style: preserve-3d;
@@ -250,8 +267,7 @@
 
 
 .register-image1, .register-image2 {
-  width: 100%;
-  height: auto;
+  width: 60vh;
   object-fit: contain;
 }
 
@@ -273,19 +289,13 @@
   margin-bottom: 20px;
 }
 
-.register-form {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  width: 300px;
-}
-
 .register-input {
-  padding: 10px;
+  position: relative;
+  padding: 5px;
   border: 3px solid #ccc;
   border-radius: 5px;
-  margin-top: 0;
   text-align: center;
+  height: 2vh;
 }
 
 .register-input:not(:last-child) {
@@ -293,7 +303,7 @@
 }
 
 .register-input::placeholder {
-  font-size: 17px;
+  font-size: 100%;
   color: gray;
   font-family: "Book Antiqua";
   text-align: center;
@@ -305,30 +315,36 @@
   box-shadow: 0 0 5px rgba(97, 218, 251, 0.5);
 }
 
-.register-button, .exit-button {
-  display: inline-block;
-  padding: 10px 20px;
+.button-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 6vh;
+  margin-left: 5px;
+}
+
+.register-button,
+.exit-button {
+  padding: 0.8vh;
   border: none;
   border-radius: 5px;
   color: goldenrod;
   background-color: #282c34;
   cursor: pointer;
-  font-size: 1.2rem;
+  font-size: 1.5vh;
   font-family: "Book Antiqua";
   transition-duration: 0.85s;
   box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
+  margin-right: 9px;
+  width: 10vw;
 }
 
-.register-button {
-  margin-top: 78px;
-  margin-bottom: -63px;
-  margin-right: 107px;
-}
-
-.register-button:hover {
+.register-button:hover,
+.exit-button:hover {
   background-color: gold;
   color: black;
 }
+
 
 .error-message-reg {
   color: red;
@@ -336,17 +352,14 @@
   margin-top: -90px;
 }
 
+
 .register-heading {
-  font-size: 4rem;
+  position: relative;
+  font-size: 6vh;
   font-weight: lighter;
   font-family: "Lucida Calligraphy";
   margin-bottom: 30px;
   color: #fff;
-}
-
-.exit-button {
-  margin-top: 19px;
-  margin-left: 115px;
 }
 
 .exit-button:hover {
@@ -356,12 +369,11 @@
 
 
 .login-image1 {
-  width: 100%;
-  height: auto;
-  max-width: 350px;
-  max-height: 200px;
+  width: 35vh;
+  max-width: 500px;
   transform: scaleY(-1);
-  margin-top: -1vw;
+  margin-top: -0.5vh;
+  margin-bottom: -0.5vh;
 }
 
 h2.glow-text {
@@ -416,5 +428,39 @@ h3.glow-text {
   height: 100%;
   z-index: -1;
   object-fit: cover;
+  overflow: hidden;
+}
+
+
+.menu-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.menu {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.menu-button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  color: goldenrod;
+  background-color: #282c34;
+  cursor: pointer;
+  font-size: 1rem;
+  font-family: "Book Antiqua";
+  margin-bottom: 10px;
+  transition-duration: 0.85s;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
+}
+
+.menu-button:hover {
+  background-color: gold;
+  color: black;
 }
 

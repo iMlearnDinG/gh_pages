@@ -1,33 +1,14 @@
-@media (max-height: 1080px) {
-  .login-image {
-    animation: rotateBack 13s;
-    filter: blur(0);
-    height: auto;
-    margin-bottom: 25px;
-    opacity: 1;
-    perspective: 1500px;
-    position: relative;
-    transform: rotateX(360deg) rotateY(360deg) rotateZ(360deg);
-    transform-style: preserve-3d;
-    transition-duration: 3s;
-    width: 25vw;
-    z-index: 2;
-  }
-}
-
 @media (max-width: 550px) {
   .login-image {
+    max-width: 45vw;
     animation: rotateBack 13s;
     filter: blur(0);
-    height: auto;
     margin-bottom: 4vw;
+    margin-top: -10vh;
     opacity: 1;
-    perspective: 1500px;
     position: relative;
     transform: rotateX(360deg) rotateY(360deg) rotateZ(360deg);
     transform-style: preserve-3d;
-    transition-duration: 3s;
-    width: 50%;
     z-index: 3;
   }
 
@@ -70,9 +51,12 @@
     height: auto; /* Adjust the height as needed */
     max-width: 100px; /* Set a maximum width if desired */
     max-height: 150px; /* Set a maximum height if desired */
-    object-fit: contain; /* Adjust the object-fit property as needed */
+    position: relative;
+    opacity: 1;
     margin-bottom: -10px; /* Adjust the margin as needed */
+    margin-top: -12vh;
     transition: transform 3s ease, opacity 0s ease; /* Combine the transitions */
+    z-index: 3;
 
     /* Tilt animation styles */
     perspective: 1000px;
@@ -90,22 +74,28 @@
   }
 }
 
-@media (max-width: 550px){
+@media (max-width: 550px) {
   .login-button {
-    padding: 2vw;
-    border: 2px;
+    padding: 1.2vh;
     border-radius: 4px;
     color: goldenrod;
     background-color: #282c34;
     cursor: pointer;
-    font-size: 1.2rem;
+    font-size: 100%;
     font-family: "Script MT Bold";
-    margin: 7vw;
+    margin-bottom: 1vh;
+    margin-top: 1vh;
     transition-duration: 0.85s;
     box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
-    width: 40%;
+  }
+
+  .login-button:active {
+    transform: translateY(1px);
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
   }
 }
+
+
 
 
 @media (max-width: 550px) {
@@ -120,6 +110,41 @@
     width: 35vw;
   }
 }
+
+@media (max-width: 550px) {
+  .App-input::placeholder {
+    color: antiquewhite;
+    text-align: center;
+    opacity: 60%;
+  }
+}
+
+@media (max-width: 550px) {
+  .App-button {
+    display: inline-flex;
+    justify-content: center;
+    padding: 0.8vh;
+    border: 2px solid transparent;
+    border-image: linear-gradient(to right, transparent, goldenrod, transparent) 1 100%;
+    border-image-slice: 1;
+    border-radius: 4px;
+    color: goldenrod;
+    background-color: #282c34;
+    cursor: pointer;
+    font-size: 100%;
+    font-family: "Book Antiqua";
+    transition-duration: 0.85s;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
+    width: 25vw;
+  }
+
+  .App-button:hover {
+    background-color: goldenrod;
+    justify-content: center;
+    color: black;
+  }
+}
+
 
 /* The media query for screens smaller than 600px */
 @media (max-width: 550px) {
@@ -138,6 +163,7 @@
     padding: 5px;
     border-width: 2px;
     font-size: 16px;
+    width: 45vw;
   }
 
   .register-input::placeholder {
@@ -145,43 +171,13 @@
   }
 
   .signup-section p {
-  font-size: 15px;
-  color: #33;
-  font-family: "High Tower Text";
-  font-weight: normal;
-  margin-top: -2vh;
-}
-
-  .App-button {
-  padding: 2vw;
-  border-radius: 5px;
-  color: goldenrod;
-  background-color: #282c34;
-  cursor: pointer;
-  font-size: 1rem;
-  font-family: "Script MT Bold";
-  font-style: italic;
-  transition-duration: 0.85s;
-  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
-  width: 60%;  /* Fill the available width */
-  height: auto;
-  margin-top: -3vh;
-}
-
-  .exit-button {display: inline-block;
-  padding: 12px 20px;
-  border: none;
-  border-radius: 5px;
-  color: goldenrod;
-  background-color: #282c34;
-  cursor: pointer;
-  font-size: 1rem;
-  font-family: "Book Antiqua";
-  margin-top: 19.5px;
-  margin-left: 95px;
-  transition-duration: 0.85s;
-  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
-  max-width: 25%;
+    font-size: 85%;
+    color: #33;
+    font-family: "High Tower Text";
+    font-weight: normal;
+    font-style: italic;
+    margin-top: -0.9rem;
+    margin-bottom: 1rem;
   }
 
   .error-message-reg {
@@ -203,11 +199,12 @@
   }
 
   .login-image1 {
-    max-width: 70vw;
-    margin: -7vw;
+    width: 50%;
+    transform: scaleY(-1);
+    margin-top: -0.5vh;
+    margin-bottom: -2vh;
   }
 }
-
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
@@ -215,12 +212,7 @@
   }
 }
 
-@media (min-width: 550px) {
-  .login-input-group {
-    flex-direction: row;
-    margin-bottom: -70px;
-  }
-}
+
 
 @media (max-width: 550px) {
   h2.glow-text {
@@ -233,7 +225,9 @@
     animation-iteration-count: infinite, 1;
     animation-fill-mode: none, forwards;
     opacity: 0;
-    font-size: 5vh;
+    font-size: 15vw;
+    display: inline-flex;
+    justify-content: center;
   }
 
   @keyframes glow {
@@ -304,3 +298,34 @@
   }
 }
 
+@media (max-width: 550px) {
+  .button-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 6vh;
+    margin-left: 5px;
+  }
+
+  .register-button,
+  .exit-button {
+    padding: 1vh;
+    border: none;
+    border-radius: 5px;
+    color: goldenrod;
+    background-color: #282c34;
+    cursor: pointer;
+    font-size: 3vh;
+    font-family: "Book Antiqua";
+    transition-duration: 0.85s;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
+    margin-right: 9px;
+    width: 25vw;
+  }
+
+  .register-button:hover,
+  .exit-button:hover {
+    background-color: gold;
+    color: black;
+  }
+}

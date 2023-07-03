@@ -60,20 +60,13 @@ function Register() {
     navigate("/login");
   };
 
-  return (
-  <div className="register-container">
-    <div className="background-video-container">
-        <video id="background-video" className="background-video" autoPlay loop muted>
+ return (
+  <div className="App-header">
+    <img src={registerImage} alt="Register" className={`register-image ${isImageAnimated ? "animate" : ""}`} />
+        <video id="background-video" className="background-video" autoPlay loop muted playsInline>
           <source src={backgroundVideo} type="video/mp4" />
           Your browser does not support the video tag.
         </video>
-        <div className="background-video-overlay"></div>
-      </div>
-    <img
-      src={registerImage}
-      alt="Register"
-      className={`register-image ${isImageAnimated ? "animate" : ""}`}
-    />
     <h2 className="register-heading">Register</h2>
     <img
       src={registerImage1}
@@ -98,18 +91,21 @@ function Register() {
       alt="Register"
       className="register-image2"
     />
-    <button
-      className="register-button"
-      onClick={register}
-      onMouseEnter={() => setImageAnimated(true)}
-      onMouseLeave={() => setImageAnimated(false)}
-    >
-      Submit
-    </button>
-    <button className="exit-button" onClick={exit}>Cancel</button>
+    <div className="button-container">
+      <button
+        className="register-button"
+        onClick={register}
+        onMouseEnter={() => setImageAnimated(true)}
+        onMouseLeave={() => setImageAnimated(false)}
+      >
+        Submit
+      </button>
+      <button className="exit-button" onClick={exit}>Cancel</button>
+    </div>
     {error && <p className="error-message">{error}</p>}
   </div>
 );
 }
+
 
 export default Register;
