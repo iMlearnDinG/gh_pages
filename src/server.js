@@ -18,7 +18,6 @@ const db = 'mongodb://127.0.0.1:27017/blindeyeDB';
 
 const lobbies = {};
 const path = require('path');
-const fs = require('fs');
 
 
 // Connect to MongoDB
@@ -159,25 +158,6 @@ app.post('/lobbies/:lobbyID/red-square-click', isAuthenticated, (req, res) => {
   io.to(lobbyID).emit('redSquareClick', { lobbyID, username: req.user.username });
   return res.status(200).send({ message: 'Red square click event emitted' });
 });
-
-app.get('/message', (req, res) => {
-  const filePath = path.join(__dirname, 'motd.txt');
-
-  fs.readFile(filePath, 'utf8', (err, data) => {
-    if (err) {
-      console.error(err);
-      res.status(500).json({ error: 'Failed to read message' });
-      return;
-    }
-
-    const messages = data.split('\n')
-      .map(line => line.trim())
-      .filter(line => line !== '');
-
-    res.json({ messages });
-  });
-});
-
 
 
 app.get('/user', isAuthenticated, async (req, res) => {

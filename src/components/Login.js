@@ -26,6 +26,11 @@ const Login = () => {
   };
 
   const loginUser = () => {
+  navigate('/menu');
+};
+
+
+ /* const loginUser = () => {
     axios({
       method: 'POST',
       data: {
@@ -49,23 +54,7 @@ const Login = () => {
         setError('Incorrect Details. Try again...');
         setErrorMessageKey((prevKey) => prevKey + 1); // Update the key to trigger component remount
       });
-  };
-
-  useEffect(() => {
-    function handleResize() {
-      if (window.innerWidth >= 768) {
-        require('../css/App.css');
-      } else {
-        require('../css/Mobile.css');
-      }
-    }
-
-    window.addEventListener('resize', handleResize);
-
-    handleResize();
-
-    return () => window.removeEventListener('resize', handleResize);
-  }, []);
+  };*/
 
   useEffect(() => {
   const checkLoginStatus = async () => {

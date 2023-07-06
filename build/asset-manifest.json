@@ -1,21 +1,32 @@
 {
   "files": {
-    "main.css": "/gh_pages/static/css/main.e57bb5cc.css",
-    "main.js": "/gh_pages/static/js/main.e1a6a66c.js",
-    "static/js/787.dabb6a0a.chunk.js": "/gh_pages/static/js/787.dabb6a0a.chunk.js",
-    "static/media/video.mp4": "/gh_pages/static/media/video.3c6d935ba65e333099ee.mp4",
+    "main.css": "/gh_pages/static/css/main.295a7481.css",
+    "main.js": "/gh_pages/static/js/main.708c031e.js",
+    "static/js/787.9113662c.chunk.js": "/gh_pages/static/js/787.9113662c.chunk.js",
+    "static/media/video.mp4": "/gh_pages/static/media/video.dfce9f6bf2ca4d594d97.mp4",
+    "static/media/blindeye-rules_Page_5.png": "/gh_pages/static/media/blindeye-rules_Page_5.7cd6a98e06290d035fd3.png",
+    "static/media/blindeye-rules_Page_2.png": "/gh_pages/static/media/blindeye-rules_Page_2.1d0c6fa91e90d4f201ea.png",
+    "static/media/blindeye-rules_Page_6.png": "/gh_pages/static/media/blindeye-rules_Page_6.a59d8a29e583897d81d1.png",
+    "static/media/blindeye-rules_Page_4.png": "/gh_pages/static/media/blindeye-rules_Page_4.9cb6e2c7c97a67178872.png",
     "static/media/register-image.png": "/gh_pages/static/media/register-image.c1afdb67ecfd30fad055.png",
     "static/media/login-image1.png": "/gh_pages/static/media/login-image1.aa6482d1c02094c36263.png",
+    "static/media/blindeye-rules_Page_1.png": "/gh_pages/static/media/blindeye-rules_Page_1.83b555904de28566abdf.png",
+    "static/media/register-image3.png": "/gh_pages/static/media/register-image3.b8aae927aa93a3806031.png",
+    "static/media/blindeye-rules_Page_8.png": "/gh_pages/static/media/blindeye-rules_Page_8.af989b5069001e4bc7bc.png",
+    "static/media/blindeye-rules_Page_7.png": "/gh_pages/static/media/blindeye-rules_Page_7.f25759526ef489ef227c.png",
     "static/media/register-image1.png": "/gh_pages/static/media/register-image1.2d38bddbd82a721b2dc7.png",
     "static/media/register-image2.png": "/gh_pages/static/media/register-image2.2d38bddbd82a721b2dc7.png",
     "static/media/login-image.png": "/gh_pages/static/media/login-image.920dfc9281c23e7217bb.png",
+    "static/media/banner.png": "/gh_pages/static/media/banner.a092807ca8ac5cfd3360.png",
+    "static/media/blindeye-rules_Page_3.png": "/gh_pages/static/media/blindeye-rules_Page_3.b6f6fd08d80da7cbb806.png",
+    "static/media/blindeye-rules_Page_9.png": "/gh_pages/static/media/blindeye-rules_Page_9.13b7383122e0e3ce43fd.png",
     "index.html": "/gh_pages/index.html",
-    "main.e57bb5cc.css.map": "/gh_pages/static/css/main.e57bb5cc.css.map",
-    "main.e1a6a66c.js.map": "/gh_pages/static/js/main.e1a6a66c.js.map",
-    "787.dabb6a0a.chunk.js.map": "/gh_pages/static/js/787.dabb6a0a.chunk.js.map"
+    "main.295a7481.css.map": "/gh_pages/static/css/main.295a7481.css.map",
+    "main.708c031e.js.map": "/gh_pages/static/js/main.708c031e.js.map",
+    "787.9113662c.chunk.js.map": "/gh_pages/static/js/787.9113662c.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.e57bb5cc.css",
-    "static/js/main.e1a6a66c.js"
+    "static/css/main.295a7481.css",
+    "static/js/main.708c031e.js"
   ]
 }

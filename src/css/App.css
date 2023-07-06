@@ -39,6 +39,7 @@
   flex-direction: column;
   justify-content: center;
   height: 100vh;
+  overflow: hidden;
 }
 
 .login-input-group {
@@ -46,6 +47,7 @@
   position: relative;
   flex-direction: row;
   justify-content: center;
+  overflow: hidden;
 }
 
 .App-input {
@@ -120,6 +122,7 @@
   margin-bottom: 2vh;
   width: 18vh;
   max-width: 165px;
+  overflow: hidden;
 }
 
 .App-button:hover {
@@ -165,6 +168,7 @@
   transition-duration: 3s;
   filter: blur(0);
   margin-top: 2vh;
+  overflow: hidden;
 }
 
 .login-image.fade-in {
@@ -228,6 +232,7 @@
   justify-content: center;
   height: 100vh;
   background-color: rgba(0, 0, 0, 0.6);
+  overflow: hidden;
 }
 
 .register-image {
@@ -608,7 +613,7 @@ h3.glow-text {
   font-size: 1rem;
   margin-bottom: 0.5rem;
   z-index: 2;
-}
+  }
 
 .menu-image {
   width: 100vh;

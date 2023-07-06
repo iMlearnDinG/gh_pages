@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import axios from 'axios';
+//import axios from 'axios';
 import '../css/App.css';
 import registerImage from '../images/register-image.png';
 import bannerImage from '../images/banner.png';
@@ -17,6 +17,7 @@ import blindeyeRules9 from '../images/blindeye-rules_Page_9.png';
 
 import multiplayerImage from '../images/register-image3.png';
 import loginImage from "../images/login-image.png";
+import motdText from '../motd.txt'; // Import the text file
 
 const Menu = () => {
   const navigate = useNavigate();
@@ -24,6 +25,10 @@ const Menu = () => {
   const [messages, setMessages] = useState([]);
 
   const logout = () => {
+  navigate('/login');
+};
+
+/*  const logout = () => {
     axios({
       method: 'GET',
       withCredentials: true,
@@ -38,7 +43,7 @@ const Menu = () => {
       .catch((error) => {
         console.log(error);
       });
-  };
+  };*/
 
   const showImage = (buttonClicked) => {
     const imageArea = imageAreaRef.current; // Get the image area from the ref
@@ -116,18 +121,20 @@ const Menu = () => {
   }, [navigate]);
 
   useEffect(() => {
-    const fetchMessages = async () => {
+    const fetchMotd = async () => {
       try {
-        const response = await axios.get('http://localhost:5000/message');
-        const data = response.data;
-        setMessages(data.messages);
+        const response = await fetch(motdText);
+        const text = await response.text();
+        const messages = text.trim().split('\n');
+        setMessages(messages);
       } catch (error) {
         console.log(error);
       }
     };
 
-    fetchMessages();
+    fetchMotd();
   }, []);
+
 
 
 
