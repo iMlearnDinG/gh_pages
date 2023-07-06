@@ -1,0 +1,22 @@
+______________________________________________________________
+Alpha Build 1.0.0
+______________________________________________________________
+Current Features
+-
+# Responsive Layout
+# Registration & Game State Database
+# Secure Routing
+# Reverse Proxy (Full Stack porting routed to backend)
+# Socketing Server (Client/Server Emits)
+______________________________________________________________
+Comming Soon...
+-
+# Interactive Single Player
+# Lobby Explorer
+# True player instancing
+# Trophy Collection System.
+______________________________________________________________
+Impossible Tasks...
+-
+# Multiplayer
+______________________________________________________________

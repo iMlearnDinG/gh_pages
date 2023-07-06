@@ -6,6 +6,7 @@ import { useNavigate } from "react-router-dom";
 import registerImage from '../images/register-image.png';
 import registerImage1 from '../images/register-image1.png';
 import registerImage2 from '../images/register-image2.png';
+import registerImage3 from '../images/register-image3.png';
 import backgroundVideo from '../images/video.mp4';
 import $ from "jquery";
 
@@ -77,13 +78,13 @@ function Register() {
 
     <input
       className="register-input"
-      placeholder="Enter a Username"
+      placeholder="Choose a username..."
       onChange={(e) => setUsername(e.target.value)}
     />
     <input
       className="register-input"
       type="password"
-      placeholder="Enter a Password"
+      placeholder="Create a password..."
       onChange={(e) => setPassword(e.target.value)}
     />
     <img
@@ -91,6 +92,11 @@ function Register() {
       alt="Register"
       className="register-image2"
     />
+      <img
+      src={registerImage3}
+      alt="Register"
+      className="register-image3"
+      />
     <div className="button-container">
       <button
         className="register-button"

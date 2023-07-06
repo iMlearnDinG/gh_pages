@@ -8,12 +8,14 @@ import '../css/Desktop.css';
 import loginImage from '../images/login-image.png';
 import loginImage1 from '../images/login-image1.png';
 import backgroundVideo from '../images/video.mp4';
+import Font from 'react-font';
 
 const Login = () => {
   const navigate = useNavigate();
   const [user, setUser] = useState({ username: '', password: '' });
   const [error, setError] = useState(null);
   const [fadeOut, setFadeOut] = useState(false);
+  const [errorMessageKey, setErrorMessageKey] = useState(0);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -39,11 +41,13 @@ const Login = () => {
           navigate('/menu');
         } else {
           setError('Account does not exist');
+          setErrorMessageKey((prevKey) => prevKey + 1); // Update the key to trigger component remount
         }
       })
       .catch((error) => {
         console.log(error);
         setError('Incorrect Details. Try again...');
+        setErrorMessageKey((prevKey) => prevKey + 1); // Update the key to trigger component remount
       });
   };
 
@@ -64,41 +68,41 @@ const Login = () => {
   }, []);
 
   useEffect(() => {
-    const checkLoginStatus = async () => {
-      try {
-        const response = await axios.get('http://localhost:5000/user', { withCredentials: true });
-        const user = response.data;
-        if (user) {
-          navigate('/menu');
-        }
-      } catch (error) {
-        console.log(error);
-      }
-    };
+  const checkLoginStatus = async () => {
+    try {
+      // const response = await axios.get('http://localhost:5000/user', { withCredentials: true });
+      // const user = response.data;
+      // if (user) {
+      //   navigate('/menu');
+      // }
+    } catch (error) {
+      console.log(error);
+    }
+  };
 
-    const handleCheckLoginStatus = async () => {
-      try {
-        await checkLoginStatus();
-      } catch (error) {
-        console.log(error);
-      }
-    };
+  const handleCheckLoginStatus = async () => {
+    try {
+      await checkLoginStatus();
+    } catch (error) {
+      console.log(error);
+    }
+  };
 
-    handleCheckLoginStatus();
-  }, [navigate]);
+  handleCheckLoginStatus();
+}, [navigate]);
 
 
   useEffect(() => {
     if (error) {
       const timer = setTimeout(() => {
         setFadeOut(true);
-      }, 7000);
+      }, 3000);
 
       return () => clearTimeout(timer);
     } else {
       setFadeOut(false);
     }
-  }, [error]);
+  }, [error, fadeOut]);
 
   useEffect(() => {
     const videoElement = $('.background-video')[0];
@@ -108,66 +112,68 @@ const Login = () => {
   }, []);
 
   const handleClick = () => {
-  // Remove focus from the button
-  document.activeElement.blur();
-
-  // Your button click logic here
-  loginUser();
-
-  // Add a time limit on the yellow effect
-  setTimeout(() => {
+    // Remove focus from the button
     document.activeElement.blur();
-  }, 500); // Adjust the duration as needed (in milliseconds)
-};
 
+    // Your button click logic here
+    loginUser();
+
+    // Add a time limit on the yellow effect
+    setTimeout(() => {
+      document.activeElement.blur();
+    }, 500); // Adjust the duration as needed (in milliseconds)
+  };
 
   return (
-    <div className="App-header">
-      <img id="login-image" src={loginImage} alt="Login" className="login-image" />
-      <video id="background-video" className="background-video" autoPlay loop muted playsInline>
-        <source src={backgroundVideo} type="video/mp4" />
-        Your browser does not support the video tag.
-      </video>
-      <h2 className="glow-text">B L I N D</h2>
-      <h3 className="glow-text">E Y E</h3>
-      <div className="login-input-group" style={{ marginTop: '35px' }}>
-        <input
-          type="text"
-          name="username"
-          value={user.username}
-          onChange={handleChange}
-          placeholder="Username"
-          className="App-input"
-        />
-        <input
-          type="password"
-          name="password"
-          value={user.password}
-          onChange={handleChange}
-          placeholder="Password"
-          className="App-input"
-        />
-      </div>
-      <button onClick={handleClick} className="login-button">
-        Login
-      </button>
-      {error && (
-        <p className={`error-message ${fadeOut ? 'fade-out' : ''}`}>
-          {error}
-        </p>
-      )}
-      <img id="login-image1" src={loginImage1} alt="Login" className="login-image1" />
+  <div className="App-header">
+    <img id="login-image" src={loginImage} alt="Login" className="login-image" />
+    <video id="background-video" className="background-video" autoPlay loop muted playsInline>
+      <source src={backgroundVideo} type="video/mp4" />
+      Your browser does not support the video tag.
+    </video>
+     <Font family='Benne'>
+      <h2 className="glow-text" style={{ textAlign: 'center' }}>B L I N D</h2>
+      <h3 className="glow-text" style={{ textAlign: 'center' }}>E Y E</h3>
+    </Font>
 
-      <div className="signup-section">
-        <p>Don't have an account?</p>
-        <div className="centered">
-          <Link to="/register" className="App-button">
-            Register
-          </Link>
-        </div>
+    <div className="login-input-group" style={{ marginTop: '35px' }}>
+      <input
+        type="text"
+        name="username"
+        value={user.username}
+        onChange={handleChange}
+        placeholder="Username"
+        className="App-input"
+      />
+      <input
+        type="password"
+        name="password"
+        value={user.password}
+        onChange={handleChange}
+        placeholder="Password"
+        className="App-input"
+      />
+    </div>
+    {error && (
+      <p key={errorMessageKey} className={`error-message ${fadeOut ? 'fade-out' : ''}`}>
+        {error}
+      </p>
+    )}
+    <div onClick={handleClick} className="login-button">
+      Login
+    </div>
+    <img id="login-image1" src={loginImage1} alt="Login" className="login-image1" />
+    <div className="signup-section">
+      <p>Don't have an account?</p>
+      <div className="centered">
+        <Link to="/register" className="App-button">
+          Register
+        </Link>
       </div>
     </div>
-  );
+  </div>
+);
+
 };
 
 export default Login;

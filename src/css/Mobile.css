@@ -1,331 +1,320 @@
 @media (max-width: 550px) {
-  .login-image {
-    max-width: 45vw;
-    animation: rotateBack 13s;
-    filter: blur(0);
-    margin-bottom: 4vw;
-    margin-top: -10vh;
-    opacity: 1;
-    position: relative;
-    transform: rotateX(360deg) rotateY(360deg) rotateZ(360deg);
-    transform-style: preserve-3d;
-    z-index: 3;
-  }
-
-  .login-image.fade-in {
-    animation: fadeIn 2s;
-    opacity: 1;
-  }
-
-  .login-image.fade-out {
-    animation: fadeOut 2s;
-    opacity: 0;
-  }
-
-  .login-image:hover {
-    filter: blur(10px);
-  }
-
-  .login-image:hover::before {
-    opacity: 1;
-  }
-
-  .login-image::before {
-    background: rgba(0, 0, 0, 0.2);
-    content: '';
-    height: 100%;
-    left: 0;
-    opacity: 0;
-    pointer-events: none;
-    position: relative;
-    top: 0;
-    transition-duration: 5s;
-    width: 100%;
-    z-index: 1;
-  }
+    .register-image {
+        width: 12vh;
+        object-fit: contain;
+        transition: transform 3s ease, opacity 0s ease;
+        perspective: 1000px;
+        transform-style: preserve-3d;
+        transform: rotateX(180deg) rotateY(0deg) rotateZ(0deg);
+        margin-top: -15vh;
+    }
 }
 
 @media (max-width: 550px) {
-  .register-image {
-    width: 100%; /* Adjust the width as needed */
-    height: auto; /* Adjust the height as needed */
-    max-width: 100px; /* Set a maximum width if desired */
-    max-height: 150px; /* Set a maximum height if desired */
-    position: relative;
-    opacity: 1;
-    margin-bottom: -10px; /* Adjust the margin as needed */
-    margin-top: -12vh;
-    transition: transform 3s ease, opacity 0s ease; /* Combine the transitions */
-    z-index: 3;
-
-    /* Tilt animation styles */
-    perspective: 1000px;
-    transform-style: preserve-3d;
-    transform: rotateX(180deg) rotateY(0deg) rotateZ(0deg);
-  }
-
-  .register-image:hover {
-    transform: rotateX(-10deg) rotateY(10deg);
-  }
-
-  .register-image.animate {
-    transform: rotateX(-10deg) rotateY(10deg);
-    transition: transform 0.5s ease;
-  }
+    .register-button,
+    .exit-button {
+        display: inline-flex;
+        position: relative;
+        justify-content: center;
+        padding: 15px;
+        border: none;
+        border-radius: 5px;
+        color: goldenrod;
+        background-color: #282c34;
+        cursor: pointer;
+        font-family: "Book Antiqua";
+        font-size: 100%;
+        transition-duration: 0.85s;
+        box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
+        margin-right: 9px;
+        margin-top: 5vh;
+        width: 23vh;
+        max-width: 175px;
+    }
 }
 
 @media (max-width: 550px) {
-  .login-button {
-    padding: 1.2vh;
-    border-radius: 4px;
-    color: goldenrod;
-    background-color: #282c34;
-    cursor: pointer;
-    font-size: 100%;
-    font-family: "Script MT Bold";
-    margin-bottom: 1vh;
-    margin-top: 1vh;
-    transition-duration: 0.85s;
-    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
-  }
-
-  .login-button:active {
-    transform: translateY(1px);
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
-  }
-}
-
-
-
-
-@media (max-width: 550px) {
-  .App-input {
-    color: navajowhite;
-    padding: 6px;
-    border: 2px ridge goldenrod;
-    border-radius: 5px;
-    background-color: #33373a;
-    margin-bottom: 5%; /* Adjusted to viewport width */
-    text-align: center;
-    width: 35vw;
-  }
-}
-
-@media (max-width: 550px) {
-  .App-input::placeholder {
-    color: antiquewhite;
-    text-align: center;
-    opacity: 60%;
-  }
-}
-
-@media (max-width: 550px) {
-  .App-button {
-    display: inline-flex;
-    justify-content: center;
-    padding: 0.8vh;
-    border: 2px solid transparent;
-    border-image: linear-gradient(to right, transparent, goldenrod, transparent) 1 100%;
-    border-image-slice: 1;
-    border-radius: 4px;
-    color: goldenrod;
-    background-color: #282c34;
-    cursor: pointer;
-    font-size: 100%;
-    font-family: "Book Antiqua";
-    transition-duration: 0.85s;
-    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
-    width: 25vw;
-  }
-
-  .App-button:hover {
-    background-color: goldenrod;
-    justify-content: center;
-    color: black;
-  }
-}
-
-
-/* The media query for screens smaller than 600px */
-@media (max-width: 550px) {
-  .register-image1,
-  .register-image2 {
-    max-width: 85vw;
-    max-height: auto;
-  }
-
-  .register-input-container {
-    margin-bottom: 15px;
-    margin-left: -15px;
-  }
-
-  .register-input {
-    padding: 5px;
-    border-width: 2px;
-    font-size: 16px;
-    width: 45vw;
-  }
-
-  .register-input::placeholder {
-    font-size: 15px;
-  }
-
-  .signup-section p {
-    font-size: 85%;
-    color: #33;
-    font-family: "High Tower Text";
-    font-weight: normal;
-    font-style: italic;
-    margin-top: -0.9rem;
-    margin-bottom: 1rem;
-  }
-
-  .error-message-reg {
-    font-size: 11px;
-    margin-top: -50px;
-  }
-
-  .register-heading {
-    font-size: 2.5rem;
-    margin-bottom: 20px;
-  }
-
-  .specific-lobby-header {
-    font-size: 1.5rem;
-  }
-
-  .specific-lobby-users p {
-    font-size: 1rem;
-  }
-
-  .login-image1 {
-    width: 50%;
-    transform: scaleY(-1);
-    margin-top: -0.5vh;
-    margin-bottom: -2vh;
-  }
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-
-
-@media (max-width: 550px) {
-  h2.glow-text {
-    margin: 0.2vw;
-    font-family: "High Tower Text";
-    color: oldlace;
-    text-shadow: 0 0 1px #FFD700, 0 0 9px #FFD700, 0 12 9px #FFD700, 0 0 12px #FFD700;
-    animation: glow 8s alternate infinite, fadeIn 2s ease-out;
-    animation-delay: 10s, 11s;
-    animation-iteration-count: infinite, 1;
-    animation-fill-mode: none, forwards;
-    opacity: 0;
-    font-size: 15vw;
-    display: inline-flex;
-    justify-content: center;
-  }
-
-  @keyframes glow {
-    0% {
-      text-shadow: 0 0 0px navajowhite, 0 0 6px #FFD700, 0 0 9px #FFD700, 0 0 12px darkgoldenrod;
+    .login-image {
+        width: 29vh;
+        margin-bottom: 1vh;
+        opacity: 1;
+        animation: rotateBack 12s;
+        animation-fill-mode: forwards;
+        transform-style: preserve-3d;
+        transform: rotateX(360deg) rotateY(360deg) rotateZ(360deg);
+        transition-duration: 3s;
+        filter: blur(0);;
+        margin-top: -13vh;
+        z-index: 3;
     }
-    50% {
-      text-shadow: 0 0 6px darkgoldenrod, 0 0 15px goldenrod, 0 0 6px darkgoldenrod, 0 0 6px #FFD700, 0 0 25px #FFD700;
-    }
-    100% {
-      text-shadow: 0 0 0px darkgoldenrod, 0 0 6px darkgoldenrod, 0 0 9px goldenrod, 0 0 12px navajowhite;
-    }
-  }
 
-  @keyframes fadeIn {
-    0% {
-      opacity: 0;
+    .login-image.fade-in {
+        opacity: 0;
     }
-    100% {
-      opacity: 1;
+
+    .login-image:hover {
+        filter: blur(10px);
     }
-  }
+
+    .login-image:hover::before {
+        opacity: 1;
+    }
+
+    .login-image::before {
+        content: '';
+        position: relative;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.2);
+        pointer-events: none;
+        transition-duration: 5s;
+        opacity: 0;
+    }
+
+    @keyframes rotateBack {
+        0% {
+            opacity: 0;
+            transform: rotateX(180deg) rotateY(0deg) rotateZ(360deg) scale(0.1);
+            perspective: 25px;
+            filter: blur(2px);
+        }
+        100% {
+            opacity: 1;
+            transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg) scale(1);
+            perspective: 0px;
+        }
+    }
+}
+
+@media (max-width: 580px) {
+    .login-button {
+        display: inline-flex;
+        justify-content: center;
+        border-radius: 6px;
+        padding: 2vw;
+        border: none;
+        color: goldenrod;
+        background-color: #282c34;
+        cursor: pointer;
+        font-size: 75%;
+        font-family: "Script MT Bold";
+        margin-bottom: 1vh;
+        margin-top: 2vh;
+        transition-duration: 0.85s;
+        box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
+        width: 27vh;
+        max-width: 350px;
+    }
+
+    .App-button {
+        display: inline-flex;
+        justify-content: space-evenly;
+        padding: 0.8vh;
+        border: 2px solid transparent;
+        border-image: linear-gradient(to right, transparent, goldenrod, transparent) 1 100%;
+        border-image-slice: 1;
+        font-style: italic;
+        border-radius: 4px;
+        color: goldenrod;
+        background-color: #282c34;
+        cursor: pointer;
+        font-size: 2vh;
+        font-family: "Book Antiqua";
+        transition-duration: 0.85s;
+        box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
+        text-decoration: none;
+        margin-bottom: 2vh;
+        margin-left: 0.5rem;
+        width: 17vh;
+    }
+
+    .signup-section p {
+        font-size: 75%;
+        color: #33;
+        font-family: "High Tower Text";
+        font-weight: normal;
+        margin-left: 0.5rem;
+    }
+
 }
 
 @media (max-width: 550px) {
-  h3.glow-text {
-    margin: 0.2vw;
-    font-family: "High Tower Text";
-    color: oldlace;
-    text-shadow: 0 0 1px #FFD700, 0 0 9px #FFD700, 0 12 9px #FFD700, 0 0 12px #FFD700;
-    animation: glow 8s alternate infinite, fadeIn 2s ease-out;
-    animation-delay: 11s, 12s;
-    animation-iteration-count: infinite, 1;
-    animation-fill-mode: none, forwards;
-    opacity: 0;
-    font-size: 4.2vh;
-    margin-bottom: -2vh;
-  }
+    .menu-title {
+        display: inline-flex;
+        position: absolute;
+        justify-content: center;
+        color: goldenrod;
+        font-family: "Lucida Calligraphy";
+        font-style: italic;
+        font-size: 25px;
+        margin-top: 1.5rem;
+        margin-left: -5px;
+        z-index: 2;
+    }
 
-  @keyframes glow {
-    0% {
-      text-shadow: 0 0 0px navajowhite, 0 0 6px #FFD700, 0 0 9px #FFD700, 0 0 12px darkgoldenrod;
+    .menu-container {
+        background-color: #282c34;
+        display: inline-flex;
+        position: relative;
+        justify-content: center;
+        z-index: 1;
+        width: 100%;
+        height: aut;
     }
-    50% {
-      text-shadow: 0 0 6px darkgoldenrod, 0 0 15px goldenrod, 0 0 6px darkgoldenrod, 0 0 6px #FFD700, 0 0 25px #FFD700;
-    }
-    100% {
-      text-shadow: 0 0 0px darkgoldenrod, 0 0 6px darkgoldenrod, 0 0 9px goldenrod, 0 0 12px navajowhite;
-    }
-  }
 
-  @keyframes fadeIn {
-    0% {
-      opacity: 0;
+    .menu {
+        display: inline-flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 20px;
+        margin-top: 35vh;
+        margin-left: 2.3rem;
+        margin-right: 2.3rem;
+        height: 15vh;
     }
-    100% {
-      opacity: 1;
-    }
-  }
 
-  @keyframes fadeOut {
-    0% {
-      opacity: 1;
+    .menu-button,
+    .menu-button-logout {
+        padding: 2vh 25px;
+        border: none;
+        border-radius: 5px;
+        color: goldenrod;
+        background-color: #282c34;
+        cursor: pointer;
+        font-size: 1rem;
+        font-family: "Book Antiqua";
+        margin-bottom: 20px;
+        transition-duration: 0.85s;
+        box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
+        opacity: 0;
+        animation: fadeIn 2s forwards;
+        animation-delay: 1s;
     }
-    100% {
-      opacity: 0;
+
+    .menu-button-logout {
+        padding: 1.5vh 20px;
+        margin-top: 4rem;
     }
-  }
+
+    @keyframes fadeIn {
+        from {
+            opacity: 0.0;
+        }
+        to {
+            opacity: 1;
+        }
+    }
+
+
+    .menu-button:hover {
+        background-color: gold;
+        color: black;
+    }
+
+    .image-area {
+        display: none;
+        flex: 1;
+        background-color: navajowhite;
+        position: fixed;
+        justify-content: center;
+        height: 84vh;
+        width: auto;
+        border: ridge;
+        border-color: goldenrod;
+        border-radius: 10px;
+        border-width: 5px;
+        box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
+        z-index: 2;
+        margin-right: 0rem;
+        margin-top: 0rem;
+    }
+
+    .register-image3 {
+        display: inline-flex;
+        position: absolute;
+        z-index: -1;
+        opacity: 7%;
+        width: 70%;
+        max-width: 1300px;
+        animation: spin 200s linear infinite;
+        overflow: hidden;
+        background: linear-gradient(to top, transparent 80%, rgba(0, 0, 0, 0.1));
+    }
+
+    @keyframes spin {
+        from {
+            transform: rotate(0deg);
+        }
+        to {
+            transform: rotate(360deg);
+        }
+    }
+
+    .banner-image {
+        display: inline-flex;
+        position: absolute;
+        justify-content: center;
+        height: 0;
+        margin-left: 0rem;
+        min-width: 175px;
+        min-height: 85%;
+        animation: slideIn 2s forwards;
+        animation-delay: -0.3s;
+    }
+
+    @keyframes slideIn {
+        0% {
+            transform: translateY(-150%); /* Start from above the container */
+            opacity: 0;
+        }
+        100% {
+            transform: translateY(0); /* Move down to the original position */
+            opacity: 1;
+        }
+    }
+
+    .menu-image2 {
+        width: 100%;
+        height: auto;
+        position: fixed;
+        animation: spin 200s linear infinite;
+        z-index: 0;
+        top: -145px;
+        margin-left: 100vw;
+        padding: 1vh;
+
+    }
+}
+
+@media (max-height: 500px) {
+    .menu-image {
+        width: 15vh%;
+        height: auto;
+        position: fixed;
+        animation: spin 200s linear infinite;
+        z-index: 0;
+        top: 3vw;
+        margin-left: -300px;
+        padding: 20%;
+
+    }
 }
 
 @media (max-width: 550px) {
-  .button-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-top: 6vh;
-    margin-left: 5px;
-  }
-
-  .register-button,
-  .exit-button {
-    padding: 1vh;
-    border: none;
-    border-radius: 5px;
-    color: goldenrod;
-    background-color: #282c34;
-    cursor: pointer;
-    font-size: 3vh;
-    font-family: "Book Antiqua";
-    transition-duration: 0.85s;
-    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
-    margin-right: 9px;
-    width: 25vw;
-  }
-
-  .register-button:hover,
-  .exit-button:hover {
-    background-color: gold;
-    color: black;
-  }
+    h3.glow-text {
+  margin: 0.2vw;
+  font-family: 'Benne', serif;
+  font-weight: bold;
+  color: oldlace;
+  text-shadow: 0 0 1px #FFD700, 0 0 9px #FFD700, 0 12 9px #FFD700, 0 0 12px #FFD700;
+  animation: glow 8s alternate infinite, fadeIn 2s ease-out;
+  animation-delay: 11s, 12s;
+  animation-iteration-count: infinite, 1;
+  animation-fill-mode: none, forwards;
+  opacity: 0;
+  font-size: 5vh;
+  margin-top: 1vh;
+}
 }
