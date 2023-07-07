@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/gh_pages/static/css/main.3a0acbcc.css",
+    "main.css": "/gh_pages/static/css/main.c51ddf24.css",
     "main.js": "/gh_pages/static/js/main.d6f7b8f1.js",
     "static/js/787.9113662c.chunk.js": "/gh_pages/static/js/787.9113662c.chunk.js",
     "static/media/video.mp4": "/gh_pages/static/media/video.dfce9f6bf2ca4d594d97.mp4",
@@ -23,12 +23,12 @@
     "static/media/blindeye-rules_Page_9.png": "/gh_pages/static/media/blindeye-rules_Page_9.13b7383122e0e3ce43fd.png",
     "static/media/motd.txt": "/gh_pages/static/media/motd.f4fc8d2d535cb4b11c29.txt",
     "index.html": "/gh_pages/index.html",
-    "main.3a0acbcc.css.map": "/gh_pages/static/css/main.3a0acbcc.css.map",
+    "main.c51ddf24.css.map": "/gh_pages/static/css/main.c51ddf24.css.map",
     "main.d6f7b8f1.js.map": "/gh_pages/static/js/main.d6f7b8f1.js.map",
     "787.9113662c.chunk.js.map": "/gh_pages/static/js/787.9113662c.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.3a0acbcc.css",
+    "static/css/main.c51ddf24.css",
     "static/js/main.d6f7b8f1.js"
   ]
 }
