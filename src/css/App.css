@@ -406,7 +406,6 @@ h3.glow-text {
   animation-fill-mode: none, forwards;
   opacity: 0;
   font-size: 5vh;
-  margin-top: -4vh;
 }
 
 @keyframes glow {
@@ -463,7 +462,7 @@ h3.glow-text {
 
 .menu-button,
 .menu-button-logout {
-  padding: 1.1vh 14px;
+  padding: 1.1vh 16px;
   border: wave;
   border-radius: 5px;
   color: goldenrod;
@@ -497,6 +496,11 @@ h3.glow-text {
 
 .menu-button:hover {
   background-color: gold;
+  color: black;
+}
+
+.menu-button-logout:hover {
+  background-color: indianred;
   color: black;
 }
 
@@ -583,7 +587,7 @@ h3.glow-text {
   margin-left: 2.5rem;
   min-width: 177px;
   min-height: 290px;
-  animation: slideIn 2s forwards;
+  animation: slideIn 2.5s forwards;
   animation-delay: -0.7s;
   z-index: 1;
 }
@@ -637,4 +641,83 @@ h3.glow-text {
   margin-left: 76vw;
   padding: 1vh;
 
+}
+
+.lobby {
+  background-color: #282c34;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 20px;
+  height: 100vh;
+}
+
+h2 {
+  color: goldenrod;
+  font-size: 2rem;
+}
+
+.lobby-table {
+  margin-top: 20px;
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.lobby-table th, .lobby-table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  color: goldenrod;
+}
+
+.lobby-table th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: center;
+  background-color: #33373a;
+}
+
+.lobby-table tr:hover {background-color: #111;}
+
+button {
+  padding: 1vh 15px;
+  border: none;
+  border-radius: 5px;
+  color: goldenrod;
+  background-color: #282c34;
+  cursor: pointer;
+  font-size: 1.2rem;
+  font-family: "Book Antiqua";
+  margin-top: 15px;
+  transition-duration: 0.85s;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
+}
+
+button:hover {
+  background-color: gold;
+  color: black;
+}
+
+button[disabled] {
+  background-color: #555;
+  cursor: not-allowed;
+}
+
+.lobbyButtonExit {
+  padding: 1vh;
+  border: none;
+  border-radius: 5px;
+  color: goldenrod;
+  background-color: #282c34;
+  cursor: pointer;
+  font-size: 1.2rem;
+  font-family: "Book Antiqua";
+  margin-top: 15px;
+  transition-duration: 0.85s;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
+}
+
+.lobbyButtonExit:hover {
+  background-color: indianred;
+  color: black;
 }

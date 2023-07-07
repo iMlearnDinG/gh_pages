@@ -8,7 +8,6 @@ import '../css/Desktop.css';
 import loginImage from '../images/login-image.png';
 import loginImage1 from '../images/login-image1.png';
 import backgroundVideo from '../images/video.mp4';
-import Font from 'react-font';
 
 const Login = () => {
   const navigate = useNavigate();
@@ -25,12 +24,12 @@ const Login = () => {
     }));
   };
 
-  const loginUser = () => {
-  navigate('/menu');
-};
+    const loginUser = () => {
+    navigate('/menu');
+  };
 
 
- /* const loginUser = () => {
+  /*const loginUser = () => {
     axios({
       method: 'POST',
       data: {
@@ -59,11 +58,11 @@ const Login = () => {
   useEffect(() => {
   const checkLoginStatus = async () => {
     try {
-      // const response = await axios.get('http://localhost:5000/user', { withCredentials: true });
-      // const user = response.data;
-      // if (user) {
-      //   navigate('/menu');
-      // }
+       const response = await axios.get('http://localhost:5000/user', { withCredentials: true });
+      const user = response.data;
+       if (user) {
+        navigate('/menu');
+       }
     } catch (error) {
       console.log(error);
     }
@@ -120,10 +119,10 @@ const Login = () => {
       <source src={backgroundVideo} type="video/mp4" />
       Your browser does not support the video tag.
     </video>
-     <Font family='Benne'>
+
       <h2 className="glow-text" style={{ textAlign: 'center' }}>B L I N D</h2>
       <h3 className="glow-text" style={{ textAlign: 'center' }}>E Y E</h3>
-    </Font>
+
 
     <div className="login-input-group" style={{ marginTop: '35px' }}>
       <input

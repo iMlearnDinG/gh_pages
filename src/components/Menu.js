@@ -1,8 +1,8 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-//import axios from 'axios';
+import axios from 'axios';
 import '../css/App.css';
-import registerImage from '../images/register-image.png';
+import registerImage from '../images/table.png';
 import bannerImage from '../images/banner.png';
 
 import blindeyeRules1 from '../images/blindeye-rules_Page_1.png';
@@ -25,10 +25,10 @@ const Menu = () => {
   const [messages, setMessages] = useState([]);
 
   const logout = () => {
-  navigate('/login');
-};
+    navigate('/login');
+  };
 
-/*  const logout = () => {
+  /*const logout = () => {
     axios({
       method: 'GET',
       withCredentials: true,
@@ -105,16 +105,16 @@ const Menu = () => {
 
   useEffect(() => {
     const checkLoginStatus = async () => {
-      try {
-        //const response = await axios.get('http://localhost:5000/user', { withCredentials: true });
-        //const user = response.data;
-        //if (!user) {
-        //navigate('/login');
-        //}
+      /*try {
+        const response = await axios.get('http://localhost:5000/user', { withCredentials: true });
+        const user = response.data;
+        if (!user) {
+        navigate('/login');
+        }
       } catch (error) {
         console.log(error);
         navigate('/login');
-      }
+      }*/
     };
 
     checkLoginStatus();
@@ -149,7 +149,7 @@ const Menu = () => {
         <button onClick={() => showImage('singlePlayer')} className="menu-button">
           Single Player
         </button>
-        <button onClick={() => showImage('multiplayer')} className="menu-button">
+        <button onClick={() => navigate('/lobby')} className="menu-button">
           Multiplayer
         </button>
 

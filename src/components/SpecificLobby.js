@@ -54,7 +54,7 @@ const SpecificLobby = () => {
     const handleLeaveLobby = async () => {
         try {
             await axios.post(`http://localhost:5000/lobbies/${lobbyID}/leave`, null, { withCredentials: true });
-            window.location.href = "/menu";
+            window.location.href = "/lobby";
         } catch (error) {
             console.log('Error while leaving the lobby', error);
         }

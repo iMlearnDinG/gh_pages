@@ -1,54 +1,93 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import axios from 'axios';
 import { Link, useNavigate } from 'react-router-dom';
+import { io } from 'socket.io-client';
 
 const Lobby = () => {
   const navigate = useNavigate();
   const [lobbies, setLobbies] = useState([]);
-  const [loading, setLoading] = useState(false); // Enable loading state.
+  const [loading, setLoading] = useState(false);
+  const [isAuthenticated, setIsAuthenticated] = useState(false); // Authentication state
 
   const fetchLobbies = useCallback(async () => {
-    setLoading(true); // Set loading state to true before request.
-    try {
+    setLoading(true);
+    /*try {
       const response = await axios.get('http://localhost:5000/lobbies', { withCredentials: true });
       setLobbies(response.data);
     } catch (error) {
       console.log(error);
-      navigate('/login'); // Redirect to the login page on error or if the user is not authenticated
+      navigate('/login');
     } finally {
-      setLoading(false); // Set loading state back to false after request.
-    }
+      setLoading(false);
+    }*/
   }, [navigate]);
 
   useEffect(() => {
     fetchLobbies();
+
+    const socket = io('http://localhost:5000'); // Create a socket connection
+
+    socket.on('lobbyUpdate', (updatedLobby) => {
+      setLobbies((prevLobbies) =>
+        prevLobbies.map((lobby) => (lobby.lobbyID === updatedLobby.lobbyID ? updatedLobby : lobby))
+      );
+    });
+
+    socket.on('userJoin', (username) => {
+      console.log(`User ${username} joined the lobby`);
+    });
+
+    socket.on('userLeave', (username) => {
+      console.log(`User ${username} left the lobby`);
+    });
+
+    return () => {
+      socket.disconnect(); // Disconnect the socket connection on component unmount
+    };
   }, [fetchLobbies]);
 
   const createLobby = async () => {
-    console.log('Create Lobby clicked.'); // Debug message.
-    setLoading(true); // Set loading state to true before request.
-    try {
-      const response = await axios.post('http://localhost:5000/lobbies', null, { withCredentials: true });
-      console.log('Lobby created successfully. ID:', response.data.lobbyID); // Debug message.
-      fetchLobbies(); // Fetch updated lobbies after creating a new lobby.
-    } catch (error) {
-      console.log('Error in createLobby: ', error); // Log error to console
-      navigate('/login'); // Redirect to the login page on error or if the user is not authenticated
-    } finally {
-      setLoading(false); // Set loading state back to false after request.
+    if (!isAuthenticated) {
+      return; // Don't create a lobby if not authenticated
     }
+
+    setLoading(true);
+    /*try {
+      const response = await axios.post('http://localhost:5000/lobbies', null, { withCredentials: true });
+      console.log('Lobby created successfully. ID:', response.data.lobbyID);
+      fetchLobbies();
+    } catch (error) {
+      console.log('Error in createLobby: ', error);
+      navigate('/login');
+    } finally {
+      setLoading(false);
+    }*/
   };
 
   const joinLobby = (lobbyID) => {
-    console.log('Join Lobby clicked. Lobby ID:', lobbyID); // Print lobby ID to the console
-    navigate(`/lobby/${lobbyID}`); // Redirect to the lobby with the specified ID
+    console.log('Join Lobby clicked. Lobby ID:', lobbyID);
+    navigate(`/lobby/${lobbyID}`);
   };
+
+  useEffect(() => {
+    // Check if the user is authenticated on component mount
+    const checkAuthentication = async () => {
+      try {
+        const response = await axios.get('http://localhost:5000/user', { withCredentials: true });
+        setIsAuthenticated(true);
+      } catch (error) {
+        setIsAuthenticated(false);
+      }
+    };
+
+    checkAuthentication();
+  }, []);
 
   return (
     <div className="lobby">
       <h2>Lobbies</h2>
       {loading ? (
-        <p>Loading...</p> // Display loading text when fetching data.
+        <p>Loading...</p>
       ) : lobbies.length > 0 ? (
         <table className="lobby-table">
           <thead>
@@ -66,10 +105,7 @@ const Lobby = () => {
                 <td>{lobby.owner}</td>
                 <td>{lobby.users.join(', ')}</td>
                 <td>
-                  <button
-                    onClick={() => joinLobby(lobby.lobbyID)}
-                    disabled={loading}
-                  >
+                  <button onClick={() => joinLobby(lobby.lobbyID)} disabled={loading}>
                     {loading ? 'Joining...' : 'Join'}
                   </button>
                 </td>
@@ -80,10 +116,14 @@ const Lobby = () => {
       ) : (
         <p>No lobbies available</p>
       )}
-      <button onClick={createLobby} disabled={loading}>
-        {loading ? 'Creating Lobby...' : 'Create Lobby'}
-      </button>
-      <Link to="/menu" className="App-button" style={{ marginTop: '10px' }}>
+      {isAuthenticated ? (
+        <button onClick={createLobby} disabled={loading}>
+          {loading ? 'Creating Lobby...' : 'Create Lobby'}
+        </button>
+      ) : (
+        <p>Login to create a lobby</p>
+      )}
+      <Link to="/menu" className="lobbyButtonExit" style={{ marginTop: '10px' }}>
         Back to Menu
       </Link>
     </div>
