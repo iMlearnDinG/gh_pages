@@ -433,9 +433,12 @@ h3.glow-text {
   font-family: "Lucida Calligraphy";
   font-style: italic;
   font-size: 25px;
-  margin-top: 1.5rem;
-  margin-left: 87px;
+  margin-top: 1.7rem;
+  margin-left: 5.3rem;
   z-index: 2;
+  animation: fadeIn 2s forwards;
+  animation-delay: 1s;
+  opacity: 0;
 }
 
 
@@ -462,8 +465,8 @@ h3.glow-text {
 
 .menu-button,
 .menu-button-logout {
-  padding: 1.1vh 16px;
-  border: wave;
+  padding: 1rem 16px;
+  border: none;
   border-radius: 5px;
   color: goldenrod;
   background-color: #282c34;
@@ -587,8 +590,8 @@ h3.glow-text {
   margin-left: 2.5rem;
   min-width: 177px;
   min-height: 290px;
-  animation: slideIn 2.5s forwards;
-  animation-delay: -0.7s;
+  animation: slideIn 2.8s forwards;
+  animation-delay: -0.5s;
   z-index: 1;
 }
 
